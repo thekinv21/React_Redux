@@ -3,8 +3,14 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import path from 'path'
 import { defineConfig } from 'vite'
 
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineConfig({
-	plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
+	plugins: [
+		react(),
+		babel({ presets: [reactCompilerPreset()] }),
+		tailwindcss(),
+	],
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, './src'),
