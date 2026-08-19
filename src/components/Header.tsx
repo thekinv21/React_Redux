@@ -5,18 +5,22 @@ export const Header = () => {
 	const { favorites } = useReduxSelector(s => s)
 	const { user, isLoading } = useReduxSelector(s => s.user)
 
-	const { getUserById } = useReduxDispatch()
+	const { getUserProfile } = useReduxDispatch()
 
 	return (
 		<div className='flex flex-row justify-between m-5'>
 			<button
-				onClick={() => getUserById(1)}
+				onClick={() => getUserProfile()}
 				className='p-2 bg-red-500 rounded-2xl border-red-400 cursor-pointer text-white text-sm'
 			>
 				Get User
 			</button>
 
-			<div>{isLoading ? 'Loading' : `User: ${user?.fullName}`}</div>
+			<div>
+				{isLoading
+					? 'Loading'
+					: `${user && user !== null ? `User: ${user?.fullName}` : 'User: Unknown'}`}
+			</div>
 
 			<div className='relative'>
 				<Bookmark size={30} />

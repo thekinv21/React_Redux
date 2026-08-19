@@ -1,0 +1,67 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"title": "iPhone 15",
+			"description": "Apple smartphone with 128GB storage",
+			"price": 799,
+			"currency": "USD"
+		},
+		{
+			"id": 2,
+			"title": "MacBook Air M2",
+			"description": "13-inch laptop with Apple M2 chip",
+			"price": 999,
+			"currency": "USD"
+		},
+		{
+			"id": 3,
+			"title": "AirPods Pro",
+			"description": "Wireless earbuds with active noise cancellation",
+			"price": 249,
+			"currency": "USD"
+		},
+		{
+			"id": 4,
+			"title": "Samsung Galaxy S24",
+			"description": "Android smartphone with 256GB storage",
+			"price": 899,
+			"currency": "USD"
+		},
+		{
+			"id": 5,
+			"title": "Sony WH-1000XM5",
+			"description": "Wireless headphones with noise cancellation",
+			"price": 399,
+			"currency": "USD"
+		}
+	],
+	"profile": {
+		"id": 1,
+		"username": "tenQuey",
+		"email": "max@example.com",
+		"fullName": "Max Johnson",
+		"avatar": "https://example.com/avatar.jpg",
+		"bio": "Frontend developer and tech enthusiast.",
+		"age": 25,
+		"gender": "male",
+		"phone": "+1 555 123 4567",
+		"location": {
+			"city": "New York",
+			"country": "USA"
+		},
+		"website": "https://example.com",
+		"socials": {
+			"instagram": "@maxjohnson",
+			"twitter": "@maxjohnson",
+			"github": "maxjohnson"
+		},
+		"stats": {
+			"followers": 1250,
+			"following": 340,
+			"posts": 56
+		},
+		"createdAt": "2026-01-15T10:30:00Z",
+		"updatedAt": "2026-08-19T08:20:00Z"
+	}
+}

@@ -1,32 +1,30 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-const fetchUserById = (userId: number) => {
-	return new Promise(resolve =>
-		setTimeout(
-			() =>
-				resolve({
-					id: userId,
-					fullName: 'Max',
-					username: 'tenQuey',
-					age: 11,
-				}),
-			1000,
-		),
-	)
+const fetchProfile = async () => {
+	try {
+		const res = await fetch('http://localhost:8080/profile')
+
+		if (!res.ok) {
+			console.log('Failed to fetch user profile')
+		}
+
+		const data = await res.json()
+
+		return data
+	} catch (error) {
+		console.log('Error to fetch user profile', error)
+	}
 }
 
-export const getUserById = createAsyncThunk(
-	`/users/by-id`,
-	async (userId: number, thunkApi) => {
-		console.log('userId', userId)
-
+export const getUserProfile = createAsyncThunk(
+	'/profile',
+	async (_, thunkApi) => {
 		try {
-			const response = await fetchUserById(userId)
+			const response = await fetchProfile()
 
-			console.log('response', response)
 			return response
 		} catch (error: unknown) {
-			thunkApi.rejectWithValue(error)
+			return thunkApi.rejectWithValue(error)
 		}
 	},
 )

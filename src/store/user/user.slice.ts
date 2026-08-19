@@ -1,6 +1,6 @@
 import type { TUser } from '@/type'
 import { createSlice } from '@reduxjs/toolkit'
-import { getUserById } from './user.actions'
+import { getUserProfile } from './user.actions'
 
 type TApiResponse = {
 	isLoading: boolean
@@ -26,7 +26,7 @@ export const userSlice = createSlice({
 		 */
 
 		builder
-			.addCase(getUserById.pending, state => {
+			.addCase(getUserProfile.pending, state => {
 				state.isLoading = true
 			})
 
@@ -34,7 +34,7 @@ export const userSlice = createSlice({
 			 * If request is Success
 			 */
 
-			.addCase(getUserById.fulfilled, (state, action) => {
+			.addCase(getUserProfile.fulfilled, (state, action) => {
 				state.isLoading = false
 				state.user = action.payload as unknown as TUser
 			})
@@ -43,7 +43,7 @@ export const userSlice = createSlice({
 			 * If request is Failed
 			 */
 
-			.addCase(getUserById.rejected, (state, action) => {
+			.addCase(getUserProfile.rejected, (state, action) => {
 				state.isLoading = false
 				state.error = action.payload ?? undefined
 				state.user = null
