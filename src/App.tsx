@@ -1,18 +1,16 @@
 import { ProductCard } from './components/ProductCard'
-import { useReduxSelector } from './hooks'
+import { products } from './mock'
 import type { TProduct } from './type'
 
 export const App = () => {
-	const { favorites } = useReduxSelector(s => s)
-
 	return (
 		<div className='h-screen w-full m-5'>
 			<h3>All Products from Redux Store</h3>
 
 			<ul className=''>
-				{Array.isArray(favorites) && favorites?.length ? (
+				{Array.isArray(products) && products?.length ? (
 					<>
-						{favorites?.map((product: TProduct) => (
+						{products?.map((product: TProduct) => (
 							<ProductCard key={product.id} product={product} />
 						))}
 					</>
