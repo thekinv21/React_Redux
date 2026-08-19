@@ -1,18 +1,16 @@
-import { useReduxSelector } from '@/hooks'
-import { favoriteAction } from '@/store/slices/favorites'
+import { useReduxDispatch, useReduxSelector } from '@/hooks'
 import type { TProduct } from '@/type'
 import { Heart } from 'lucide-react'
-import { useDispatch } from 'react-redux'
 
 type TProductCard = {
 	product: TProduct
 }
 
 export function ProductCard({ product }: TProductCard) {
+	const { toggleFavorite } = useReduxDispatch()
+
 	const { favorites } = useReduxSelector(s => s)
 	const isExist: boolean = favorites?.some((p: TProduct) => p.id === product.id)
-
-	const dispatch = useDispatch()
 
 	return (
 		<li
@@ -23,7 +21,7 @@ export function ProductCard({ product }: TProductCard) {
 
 			<button
 				className='cursor-pointer'
-				onClick={() => dispatch(favoriteAction.toggleFavorite(product))}
+				onClick={() => toggleFavorite(product)}
 			>
 				<Heart size={16} className={isExist ? 'text-red-600' : 'text-black'} />
 			</button>
