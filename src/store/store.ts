@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { favoriteReducer } from './slices/favorites'
+import { favoriteReducer } from './favorite/favorite.slice'
+import { userReducer } from './user/user.slice'
 
 const reducers = combineReducers({
 	favorites: favoriteReducer,
+	user: userReducer,
 })
 
 export const globalStore = configureStore({
