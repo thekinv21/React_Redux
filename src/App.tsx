@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux'
 import { ProductCard } from './components/ProductCard'
+import { useReduxSelector } from './hooks'
 import type { TProduct } from './type'
 
 export const App = () => {
-	const { favorites } = useSelector(s => s)
+	const { favorites } = useReduxSelector(s => s)
 
 	return (
 		<div className='h-screen w-full m-5'>
@@ -13,7 +13,7 @@ export const App = () => {
 				{Array.isArray(favorites) && favorites?.length ? (
 					<>
 						{favorites?.map((product: TProduct) => (
-							<ProductCard product={product} />
+							<ProductCard key={product.id} product={product} />
 						))}
 					</>
 				) : (
