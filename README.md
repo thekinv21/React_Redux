@@ -2,16 +2,6 @@
 
 A hands-on React & Redux tutorial covering the fundamentals of state management, Redux concepts, and how to integrate Redux with React applications. Perfect for beginners looking to build a strong foundation in modern React state management.
 
-
-## Table of Contents
-
-- [Features](#rocket-features)
-- [Tech Stack](#computer-tech-stack)
-- [Installation](#down-arrow-installation)
-- [Usage](#light-bulb-usage)
-- [Project Structure](#file-folder-project-structure)
-- [Important Links](#link-important-links)
-
 ## Features
 
 - **State Management with Redux Toolkit:** Efficiently manage application state using Redux Toolkit, the official, opinionated, and batteries-included toolset for Redux.
@@ -36,6 +26,7 @@ A hands-on React & Redux tutorial covering the fundamentals of state management,
 Follow these steps to set up the project locally:
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/thekinv21/React_Redux.git
     cd React_Redux
@@ -43,12 +34,14 @@ Follow these steps to set up the project locally:
 
 2.  **Install dependencies:**
     This project uses npm as its package manager. You can also use yarn or pnpm.
+
     ```bash
     npm install
     ```
 
 3.  **Run the development server:**
     This command will start the Vite development server.
+
     ```bash
     npm run dev
     ```
@@ -61,9 +54,9 @@ This project demonstrates a practical application of React and Redux for managin
 
 **Core Functionality:**
 
--   **Product Display:** The `App.tsx` component renders a list of products fetched from `src/mock/ProductData.ts`.
--   **Favorite Toggle:** Each product card (`ProductCard.tsx`) allows users to toggle its favorite status. Clicking the heart icon will add or remove the product from the Redux store's `favorites` slice.
--   **State Synchronization:** `useReduxSelector` and `useReduxDispatch` hooks are used to interact with the Redux store, ensuring that the UI reflects the current favorite status of each product.
+- **Product Display:** The `App.tsx` component renders a list of products fetched from `src/mock/ProductData.ts`.
+- **Favorite Toggle:** Each product card (`ProductCard.tsx`) allows users to toggle its favorite status. Clicking the heart icon will add or remove the product from the Redux store's `favorites` slice.
+- **State Synchronization:** `useReduxSelector` and `useReduxDispatch` hooks are used to interact with the Redux store, ensuring that the UI reflects the current favorite status of each product.
 
 **Example Scenario:**
 
@@ -116,9 +109,9 @@ React_Redux/
 
 **Key Directories:**
 
--   `src/components`: Contains reusable UI components like `ProductCard`.
--   `src/hooks`: Custom React hooks for interacting with Redux (`useReduxDispatch`, `useReduxSelector`).
--   `src/mock`: Mock data for products.
--   `src/provider`: Redux provider component.
--   `src/store`: Redux store configuration, reducers, and slices.
--   `src/type`: TypeScript type definitions.
+- `src/components`: Contains reusable UI components like `ProductCard`.
+- `src/hooks`: Custom React hooks for interacting with Redux (`useReduxDispatch`, `useReduxSelector`).
+- `src/mock`: Mock data for products.
+- `src/provider`: Redux provider component.
+- `src/store`: Redux store configuration, reducers, and slices.
+- `src/type`: TypeScript type definitions.
