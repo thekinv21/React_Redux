@@ -1,9 +1,11 @@
 
 # Redux Toolkit Tutorial
 
+<img width="766" height="400" alt="1680738181127" src="https://github.com/user-attachments/assets/8799744c-f812-4596-9a69-85b119b4f085" />
+
 A hands-on React & Redux tutorial project demonstrating the fundamentals of state management with Redux Toolkit, core Redux concepts, and seamless integration with React applications. This project is ideal for beginners aiming to build a solid understanding of modern React state management techniques.
 
-<img width="766" height="400" alt="1680738181127" src="https://github.com/user-attachments/assets/8799744c-f812-4596-9a69-85b119b4f085" />
+
 
 ## Description
 
