@@ -1,77 +1,124 @@
-# React + TypeScript + Vite
+# React_Redux
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hands-on React & Redux tutorial covering the fundamentals of state management, Redux concepts, and how to integrate Redux with React applications. Perfect for beginners looking to build a strong foundation in modern React state management.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Table of Contents
 
-## React Compiler
+- [Features](#rocket-features)
+- [Tech Stack](#computer-tech-stack)
+- [Installation](#down-arrow-installation)
+- [Usage](#light-bulb-usage)
+- [Project Structure](#file-folder-project-structure)
+- [Important Links](#link-important-links)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+- **State Management with Redux Toolkit:** Efficiently manage application state using Redux Toolkit, the official, opinionated, and batteries-included toolset for Redux.
+- **React Integration:** Seamlessly connect Redux state and actions to React components using `react-redux`.
+- **Dynamic Product Listing:** Display a list of products, fetched from a mock data source.
+- **Favorite Management:** Implement functionality to add and remove products from a favorites list using Redux.
+- **Modern Tooling:** Built with Vite for a fast development experience, TypeScript for type safety, and Tailwind CSS for utility-first styling.
+- **React Compiler:** Enabled for potential performance optimizations in React components.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend Framework:** React
+- **State Management:** Redux Toolkit, React-Redux
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Linting:** ESLint
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Follow these steps to set up the project locally:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/thekinv21/React_Redux.git
+    cd React_Redux
+    ```
+
+2.  **Install dependencies:**
+    This project uses npm as its package manager. You can also use yarn or pnpm.
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    This command will start the Vite development server.
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+
+## Usage
+
+This project demonstrates a practical application of React and Redux for managing a list of products and their favorite status.
+
+**Core Functionality:**
+
+-   **Product Display:** The `App.tsx` component renders a list of products fetched from `src/mock/ProductData.ts`.
+-   **Favorite Toggle:** Each product card (`ProductCard.tsx`) allows users to toggle its favorite status. Clicking the heart icon will add or remove the product from the Redux store's `favorites` slice.
+-   **State Synchronization:** `useReduxSelector` and `useReduxDispatch` hooks are used to interact with the Redux store, ensuring that the UI reflects the current favorite status of each product.
+
+**Example Scenario:**
+
+Imagine an e-commerce or product catalog application where users can mark items as favorites. This project provides a simplified model for such a feature.
+
+1.  The application loads a list of products.
+2.  Users can click the heart icon next to a product to add it to their favorites.
+3.  Clicking the heart icon again removes the product from favorites.
+4.  The state of the heart icon (filled/unfilled) visually indicates whether a product is currently in the favorites list.
+
+## Project Structure
+
+The project follows a standard React project structure with specific configurations for Redux and styling:
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+React_Redux/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── ProductCard.tsx
+│   ├── hooks/
+│   │   ├── index.ts
+│   │   ├── useReduxDispatch.ts
+│   │   └── useReduxSelector.ts
+│   ├── mock/
+│   │   ├── index.ts
+│   │   └── ProductData.ts
+│   ├── provider/
+│   │   └── ReduxProvider.tsx
+│   ├── store/
+│   │   ├── index.ts
+│   │   ├── slices/
+│   │   │   └── favorites.ts
+│   │   └── store.ts
+│   ├── type/
+│   │   ├── index.ts
+│   │   └── product.types.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── eslint.config.js
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
 ```
+
+**Key Directories:**
+
+-   `src/components`: Contains reusable UI components like `ProductCard`.
+-   `src/hooks`: Custom React hooks for interacting with Redux (`useReduxDispatch`, `useReduxSelector`).
+-   `src/mock`: Mock data for products.
+-   `src/provider`: Redux provider component.
+-   `src/store`: Redux store configuration, reducers, and slices.
+-   `src/type`: TypeScript type definitions.
