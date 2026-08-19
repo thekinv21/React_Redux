@@ -1,7 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { favoriteReducer } from './slices/favorites'
+
+const reducers = combineReducers({
+	favorites: favoriteReducer,
+})
 
 export const globalStore = configureStore({
-	reducer: {},
+	reducer: reducers,
 })
 
 /**
